@@ -1,23 +1,30 @@
+describe("About expectity (topics/about_expectity.js)", function () {
+  it("numeric expectity", function () {
+    expect(3 + __).toEqual(7, "");
+  });
 
-module("About Equality (topics/about_equality.js)");
+  it("string expectity", function () {
+    expect("3" + __).toEqual("37", "concatenate the strings");
+  });
 
-test("numeric equality", function() {
-    equal(3 + __,  7, "");
-});
+  it("expectity without type coercion", function () {
+    expect(3 === __).toBeTrue("what is exactly expect to 3?");
+  });
 
-test("string equality", function() {
-    equal("3" + __, "37", "concatenate the strings");
-});
+  it("expectity with type coercion", function () {
+    expect(3 == "__").toBeTrue(
+      "what string is expect to 3, with type coercion?"
+    );
+  });
 
-test("equality without type coercion", function() {
-    ok(3 === __, 'what is exactly equal to 3?');
-});
-
-test("equality with type coercion", function() {
-    ok(3 == "__", 'what string is equal to 3, with type coercion?');
-});
-
-test("string literals", function() {
-    equal(__, "frankenstein", "quote types are interchangable, but must match.");
-    equal(__, 'frankenstein', "quote types can use both single and double quotes.");
+  it("string literals", function () {
+    expect(__).toEqual(
+      "frankenstein",
+      "quote types are interchangable, but must match."
+    );
+    expect(__).toEqual(
+      "frankenstein",
+      "quote types can use both single and double quotes."
+    );
+  });
 });
