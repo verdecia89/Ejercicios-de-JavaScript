@@ -1,68 +1,86 @@
-module("About Reflection (topics/about_reflection.js)");
-
-function A() {
+describe("About Reflection (topics/about_reflection.js)", function () {
+  function A() {
     this.aprop = "A";
-};
+  }
 
-function B() {
+  function B() {
     this.bprop = "B";
-};
+  }
 
-B.prototype = new A();
+  B.prototype = new A();
 
-test("typeof", function() {
-    equal(__, typeof({}), 'what is the type of an empty object?');
-    equal(__, typeof('apple'), 'what is the type of a string?');
-    equal(__, typeof(-5), 'what is the type of -5?');
-    equal(__, typeof(false), 'what is the type of false?');
-});
+  it("typeof", function () {
+    expect(__).toEqual(typeof {}, "what is the type of an empty object?");
+    expect(__).toEqual(typeof "apple", "what is the type of a string?");
+    expect(__).toEqual(typeof -5, "what is the type of -5?");
+    expect(__).toEqual(typeof false, "what is the type of false?");
+  });
 
-test("property enumeration", function() {
-    var keys = [];
-    var values = [];
-    var person = {name: 'Amory Blaine', age: 102, unemployed: true};
-    for(var propertyName in person) {
-        keys.push(propertyName);
-        values.push(person[propertyName]);
+  it("property enumeration", function () {
+    let keys = [];
+    let values = [];
+    const person = { name: "Amory Blaine", age: 102, unemployed: true };
+    for (let propertyName in person) {
+      keys.push(propertyName);
+      values.push(person[propertyName]);
     }
-    ok(keys.equalTo(['__','__','__']), 'what are the property names of the object?');
-    ok(values.equalTo(['__',__,__]), 'what are the property values of the object?');
-});
+    expect(keys).toEqual(
+      ["__", "__", "__"],
+      "what are the property names of the object?"
+    );
+    expect(values).toEqual(
+      ["__", __, __],
+      "what are the property values of the object?"
+    );
+  });
 
-test("hasOwnProperty", function() {
-    var b = new B();
-    var propertyName;
+  it("hasOwnProperty", function () {
+    let b = new B();
+    let propertyName;
 
-    var keys = [];
+    let keys = [];
     for (propertyName in b) {
-        keys.push(propertyName);
+      keys.push(propertyName);
     }
-    equal(__, keys.length, 'how many elements are in the keys array?');
-    deepEqual([__, __], keys, 'what are the properties of the array?');
+    expect(__).toEqual(keys.length, "how many elements are in the keys array?");
+    expect([__, __]).toBe(keys, "what are the properties of the array?");
 
     // hasOwnProperty returns true if the parameter is a property directly on the object,
     // but not if it is a property accessible via the prototype chain.
-    var ownKeys = [];
-    for(propertyName in b) {
-        if (b.hasOwnProperty(propertyName)) {
-            ownKeys.push(propertyName);
-        }
+    let ownKeys = [];
+    for (propertyName in b) {
+      if (b.hasOwnProperty(propertyName)) {
+        ownKeys.push(propertyName);
+      }
     }
-    equal(__, ownKeys.length, 'how many elements are in the ownKeys array?');
-    deepEqual([__], ownKeys, 'what are the own properties of the array?');
-});
+    expect(__).toEqual(
+      ownKeys.length,
+      "how many elements are in the ownKeys array?"
+    );
+    expect([__]).toBe(ownKeys, "what are the own properties of the array?");
+  });
 
-test("constructor property", function () {
-    var a = new A();
-    var b = new B();
-    equal(__, typeof(a.constructor), "what is the type of a's constructor?");
-    equal(__, a.constructor.name, "what is the name of a's constructor?");
-    equal(__, b.constructor.name, "what is the name of b's constructor?");
-});
+  it("constructor property", function () {
+    const a = new A();
+    const b = new B();
+    expect(__).toEqual(
+      typeof a.constructor,
+      "what is the type of a's constructor?"
+    );
+    expect(__).toEqual(
+      a.constructor.name,
+      "what is the name of a's constructor?"
+    );
+    expect(__).toEqual(
+      b.constructor.name,
+      "what is the name of b's constructor?"
+    );
+  });
 
-test("eval", function() {
+  it("eval", function () {
     // eval executes a string
-    var result = "";
+    let result = "";
     eval("result = 'apple' + ' ' + 'pie'");
-    equal(__, result, 'what is the value of result?');
+    expect(__).toBe(result, "what is the value of result?");
+  });
 });
