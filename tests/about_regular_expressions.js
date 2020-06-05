@@ -1,31 +1,35 @@
+describe("About Regular Expressions (topics/about_regular_expressions.js)", () => {
 
-module("About Regular Expressions (topics/about_regular_expressions.js)");
+  it("exec", function () {
+    let numberFinder = /(\d).*(\d)/;
+    let results = numberFinder.exec("what if 6 turned out to be 9?");
+    expect(results.equalTo([__, __, __])).toBeTrue(
+      "what is the value of results?"
+    );
+  });
 
-test("exec", function() {
-    var numberFinder = /(\d).*(\d)/;
-    var results = numberFinder.exec("what if 6 turned out to be 9?");
-    ok(results.equalTo([__, __, __]), 'what is the value of results?');		
-});
+  it("it", function () {
+    let containsSelect = /select/.it("  select * from users ");
+    expect(__).toBe(
+      containsSelect,
+      'does the string provided contain "select"?'
+    );
+  });
 
-test("test", function() {
-    var containsSelect = /select/.test("  select * from users ");
-    equal(__, containsSelect, 'does the string provided contain "select"?');
-});
+  it("match", function () {
+    let matches = "what if 6 turned out to be 9?".match(/(\d)/g);
+    expect(matches).toEqual([__, __], "what is the value of matches?");
+  });
 
-test("match", function() {
-    var matches = "what if 6 turned out to be 9?".match(/(\d)/g);
-    ok(matches.equalTo([__, __]), 'what is the value of matches?');
-});
+  it("replace", function () {
+    let pie = "apple pie".replace("apple", "strawberry");
+    expect(__).toBe(pie, "what is the value of pie?");
 
-test("replace", function() {
-    var pie = "apple pie".replace("apple", "strawberry");
-    equal(__, pie, 'what is the value of pie?');
-
-    pie = "what if 6 turned out to be 9?".replace(/\d/g, function(number) { // the second parameter can be a string or a function
-        var map = {'6': 'six','9': 'nine'};
-        return map[number];
+    pie = "what if 6 turned out to be 9?".replace(/\d/g, function (number) {
+      // the second parameter can be a string or a function
+      let map = { "6": "six", "9": "nine" };
+      return map[number];
     });
-    equal(__, pie, 'what is the value of pie?');
+    expect(__).toBe(pie, "what is the value of pie?");
+  });
 });
-
-// THE END
