@@ -1,34 +1,45 @@
+describe("About Strings (topics/about_strings.js)", () => {
+  it("delimiters", function () {
+    const singleQuotedString = "apple";
+    const doubleQuotedString = "apple";
+    expect(__).toBe(
+      singleQuotedString === doubleQuotedString,
+      "are the two strings equal?"
+    );
+  });
 
-module("About Strings (topics/about_strings.js)");
+  it("concatenation", function () {
+    const fruit = "apple";
+    const dish = "pie";
+    expect(__).toBe(
+      fruit + " " + dish,
+      'what is the value of fruit + " " + dish?'
+    );
+  });
 
-test("delimiters", function() {
-    var singleQuotedString = 'apple';
-    var doubleQuotedString = "apple";
-    equal(__, singleQuotedString === doubleQuotedString, 'are the two strings equal?');
-});
+  it("character Type", function () {
+    const characterType = typeof "Amory".charAt(1); // typeof will be explained in about reflection
+    expect(__).toBe(characterType, "Javascript has no character type");
+  });
 
-test("concatenation", function() {
-    var fruit = "apple";
-    var dish = "pie";
-    equal(__, fruit + " " + dish, 'what is the value of fruit + " " + dish?');
-});
+  it("escape character", function () {
+    const stringWithAnEscapedCharacter = "\u0041pple";
+    expect(__).toBe(
+      stringWithAnEscapedCharacter,
+      "what  is the value of stringWithAnEscapedCharacter?"
+    );
+  });
 
-test("character Type", function() {
-    var characterType = typeof("Amory".charAt(1)); // typeof will be explained in about reflection
-    equal(__, characterType, 'Javascript has no character type');
-});
+  it("string.length", function () {
+    const fruit = "apple";
+    expect(__).toBe(fruit.length, "what is the value of fruit.length?");
+  });
 
-test("escape character", function() {
-    var stringWithAnEscapedCharacter  = "\u0041pple";
-    equal(__, stringWithAnEscapedCharacter, 'what  is the value of stringWithAnEscapedCharacter?');
-});
-
-test("string.length", function() {
-    var fruit = "apple";
-    equal(__, fruit.length, 'what is the value of fruit.length?');
-});
-
-test("slice", function() {
-    var fruit = "apple pie";
-    equal(__, fruit.slice(0,5), 'what is the value of fruit.slice(0,5)?');
+  it("slice", function () {
+    const fruit = "apple pie";
+    expect(__).toEqual(
+      fruit.slice(0, 5),
+      "what is the value of fruit.slice(0,5)?"
+    );
+  });
 });
