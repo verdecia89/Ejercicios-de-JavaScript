@@ -10,7 +10,7 @@ describe("About Functions And Closure (topics/about_functions_and_closure.js)", 
   });
 
   it("assigning functions to letiables", function () {
-    let triple = function (input) {
+    const triple = function (input) {
       return input * 3;
     };
     equal(__, triple(4), "what is triple 4?");
