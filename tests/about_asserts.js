@@ -8,6 +8,6 @@ describe("About Asserts (topics/about_asserts.js)", function () {
   });
 
   it("equal", function () {
-    equal(__).toBe(1 + 1, "what will satisfy the equal assertion?");
+    expect(__).toBe(1 + 1, "what will satisfy the equal assertion?");
   });
 });
