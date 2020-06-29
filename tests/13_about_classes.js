@@ -1,4 +1,4 @@
-describe("About Prototypal Inheritance (topics/about_prototypal_inheritance.js)", function () {
+describe("About Prototypal Inheritance (topics/13_about_prototypal_inheritance.js)", function () {
   class User {
     constructor(name, password) {
       this.name = name;

@@ -1,4 +1,4 @@
-describe("About Asserts (topics/about_asserts.js)", function () {
+describe("About Asserts (topics/00_about_asserts.js)", function () {
   it("true", function () {
     expect(true).toBeTrue("what will satisfy the 'toBeTrue' assertion?");
   });
