@@ -23,8 +23,8 @@ describe("About this (topics/10_about_this.js)", () => {
     const alias = person.intro;
 
     // if the function is not called as an object property 'this' is the global context
-    // (window in a browser). This is an example. Please do not do this in practise.
-    window.__ = "Peter";
+    // (global in nodejs). This is an example. Please do not do this in practise.
+    global.__ = "Peter";
     expect(alias()).toEqual(
       "Hello, my name is Peter",
       "What does 'this' refer to when it is not part of an object?"
