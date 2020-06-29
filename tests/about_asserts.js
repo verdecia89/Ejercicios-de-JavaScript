@@ -1,6 +1,6 @@
 describe("About Asserts (topics/about_asserts.js)", function () {
   it("true", function () {
-    expect(__).toBeTrue("what will satisfy the 'toBeTrue' assertion?");
+    expect(true).toBeTrue("what will satisfy the 'toBeTrue' assertion?");
   });
 
   it("not true", function () {
