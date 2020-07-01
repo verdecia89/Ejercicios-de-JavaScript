@@ -1,12 +1,7 @@
-Update
-======
+# Como usar este repo?
 
-JavaScript Koans is an interactive learning environment that uses failing tests to introduce students to aspects of JavaScript in a logical sequence. 
-
-The inspiration for this project comes from the Edgecase Ruby Koans and the book 'Javascript: The Good Parts'.
-
-Open the file jskoans.htm in your favourite browser and make the tests pass.
-
-The koans use the [Qunit](http://qunitjs.com/) test syntax and test runner. 
-
-Get started with Ryan Anklam's [Learn JavaScript completely On the Cloud With the JavaScript Koans and Cloud9 IDE](http://blog.bittersweetryan.com/2011/08/learn-some-javascript-completely-on.html)
+1. Tener node instalado
+2. Clonar/Descargar el repositorio
+3. Descargar todas las dependencias con `npm install`
+4. Correr los tests con `npm test`
+5. Ver **todos** los tests fallando
