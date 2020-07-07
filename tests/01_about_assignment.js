@@ -1,11 +1,12 @@
 describe("About Assignment (topics/01_about_assignment.js)", function () {
   it("local variables", function () {
-    let temp = __;
+    let temp = 0;
+    temp += 1;
     expect(temp).toBe(1, "Assign a value to the variable temp");
   });
 
   it("local constant", function () {
-    const temp = __;
+    const temp = 1;
     expect(temp).toBe(1, "Assign a value to the variable temp");
   });
 
@@ -16,8 +17,9 @@ describe("About Assignment (topics/01_about_assignment.js)", function () {
     temp = 1;
   }
   it("global variables", function () {
+    var temp = 1;
     expect(temp).toBe(
-      __,
+      1,
       "global variables are assigned to the window object"
     );
   });
