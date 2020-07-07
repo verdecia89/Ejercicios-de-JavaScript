@@ -10,4 +10,5 @@ describe("About Asserts (topics/00_about_asserts.js)", function () {
   it("equal", function () {
     expect(2).toBe(1 + 1, "what will satisfy the equal assertion?");
   });
+  
 });
